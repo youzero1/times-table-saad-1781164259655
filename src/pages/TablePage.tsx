@@ -29,42 +29,42 @@ export default function TablePage() {
   const formatNumber = (n: number): string => n.toLocaleString();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f0f1a] via-[#12122a] to-[#0a0a18] flex flex-col items-center py-10 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#051a0f] via-[#071f12] to-[#03120a] flex flex-col items-center py-10 px-4">
       {/* Header */}
       <div className="w-full max-w-2xl mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-violet-500/30">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-green-500/30">
             <Hash size={20} className="text-white" />
           </div>
           <h1 className="text-3xl font-extrabold tracking-tight text-white">
             Multiplication Table
           </h1>
         </div>
-        <p className="text-slate-400 text-sm ml-13">
+        <p className="text-green-900/60 text-sm ml-13" style={{color:'#86efac99'}}>
           Showing the multiplication table of{' '}
-          <span className="text-violet-400 font-bold">732</span>
+          <span className="text-green-400 font-bold">732</span>
         </p>
       </div>
 
       {/* Controls */}
       <div className="w-full max-w-2xl mb-6 flex flex-wrap items-center gap-4">
         {/* Row limit control */}
-        <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-2">
-          <span className="text-slate-400 text-sm">Rows:</span>
+        <div className="flex items-center gap-2 bg-white/5 border border-green-900/40 rounded-xl px-4 py-2">
+          <span className="text-green-400/70 text-sm">Rows:</span>
           <button
             onClick={() => handleLimitChange(-5)}
-            className="w-7 h-7 rounded-lg bg-white/10 hover:bg-violet-500/30 flex items-center justify-center transition-colors"
+            className="w-7 h-7 rounded-lg bg-white/10 hover:bg-green-500/30 flex items-center justify-center transition-colors"
             aria-label="Decrease rows"
           >
-            <ChevronDown size={14} className="text-slate-300" />
+            <ChevronDown size={14} className="text-green-300" />
           </button>
           <span className="text-white font-bold font-mono-custom w-8 text-center">{limit}</span>
           <button
             onClick={() => handleLimitChange(5)}
-            className="w-7 h-7 rounded-lg bg-white/10 hover:bg-violet-500/30 flex items-center justify-center transition-colors"
+            className="w-7 h-7 rounded-lg bg-white/10 hover:bg-green-500/30 flex items-center justify-center transition-colors"
             aria-label="Increase rows"
           >
-            <ChevronUp size={14} className="text-slate-300" />
+            <ChevronUp size={14} className="text-green-300" />
           </button>
         </div>
 
@@ -74,8 +74,8 @@ export default function TablePage() {
           className={clsx(
             'flex items-center gap-2 px-4 py-2 rounded-xl border text-sm font-medium transition-all',
             highlightEven
-              ? 'bg-violet-500/20 border-violet-500/50 text-violet-300'
-              : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:border-white/20'
+              ? 'bg-green-500/20 border-green-500/50 text-green-300'
+              : 'bg-white/5 border-green-900/30 text-green-400/60 hover:text-green-200 hover:border-green-700/40'
           )}
         >
           <Sparkles size={14} />
@@ -91,8 +91,8 @@ export default function TablePage() {
               className={clsx(
                 'w-9 h-8 rounded-lg text-xs font-bold transition-all',
                 limit === n
-                  ? 'bg-violet-600 text-white shadow-md shadow-violet-500/30'
-                  : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white border border-white/10'
+                  ? 'bg-green-600 text-white shadow-md shadow-green-500/30'
+                  : 'bg-white/5 text-green-400/60 hover:bg-green-900/30 hover:text-green-200 border border-green-900/30'
               )}
             >
               {n}
@@ -102,16 +102,16 @@ export default function TablePage() {
       </div>
 
       {/* Table card */}
-      <div className="w-full max-w-2xl rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
+      <div className="w-full max-w-2xl rounded-2xl overflow-hidden border border-green-900/40 shadow-2xl shadow-black/50">
         {/* Table header */}
-        <div className="grid grid-cols-3 bg-gradient-to-r from-violet-900/60 to-indigo-900/60 border-b border-white/10">
-          <div className="px-6 py-3 text-xs font-bold uppercase tracking-widest text-violet-300">#</div>
-          <div className="px-6 py-3 text-xs font-bold uppercase tracking-widest text-violet-300 text-center">Expression</div>
-          <div className="px-6 py-3 text-xs font-bold uppercase tracking-widest text-violet-300 text-right">Result</div>
+        <div className="grid grid-cols-3 bg-gradient-to-r from-green-900/60 to-emerald-900/60 border-b border-green-900/40">
+          <div className="px-6 py-3 text-xs font-bold uppercase tracking-widest text-green-400">#</div>
+          <div className="px-6 py-3 text-xs font-bold uppercase tracking-widest text-green-400 text-center">Expression</div>
+          <div className="px-6 py-3 text-xs font-bold uppercase tracking-widest text-green-400 text-right">Result</div>
         </div>
 
         {/* Table rows */}
-        <div className="divide-y divide-white/5">
+        <div className="divide-y divide-green-900/20">
           {rows.map((row) => {
             const isHovered = hoveredRow === row.multiplier;
             const isEven = row.result % 2 === 0;
@@ -125,9 +125,9 @@ export default function TablePage() {
                 className={clsx(
                   'grid grid-cols-3 transition-all duration-150 cursor-default',
                   isHovered
-                    ? 'bg-violet-500/15'
+                    ? 'bg-green-500/15'
                     : isHighlighted
-                    ? 'bg-indigo-500/10'
+                    ? 'bg-emerald-500/10'
                     : row.multiplier % 2 === 0
                     ? 'bg-white/[0.02]'
                     : 'bg-transparent'
@@ -139,8 +139,8 @@ export default function TablePage() {
                     className={clsx(
                       'w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold font-mono-custom transition-all',
                       isHovered
-                        ? 'bg-violet-500 text-white shadow-md shadow-violet-500/40'
-                        : 'bg-white/8 text-slate-500'
+                        ? 'bg-green-500 text-white shadow-md shadow-green-500/40'
+                        : 'bg-white/8 text-green-700'
                     )}
                   >
                     {row.multiplier}
@@ -152,12 +152,12 @@ export default function TablePage() {
                   <span
                     className={clsx(
                       'font-mono-custom text-sm transition-colors',
-                      isHovered ? 'text-violet-200' : 'text-slate-300'
+                      isHovered ? 'text-green-200' : 'text-slate-300'
                     )}
                   >
-                    <span className="text-violet-400 font-bold">732</span>
-                    <span className="text-slate-500 mx-1.5">×</span>
-                    <span className="text-cyan-400 font-bold">{row.multiplier}</span>
+                    <span className="text-green-400 font-bold">732</span>
+                    <span className="text-green-700/80 mx-1.5">×</span>
+                    <span className="text-teal-400 font-bold">{row.multiplier}</span>
                   </span>
                 </div>
 
@@ -169,14 +169,14 @@ export default function TablePage() {
                       isHovered
                         ? 'text-white scale-110'
                         : isHighlighted
-                        ? 'text-indigo-300'
-                        : 'text-emerald-400'
+                        ? 'text-emerald-300'
+                        : 'text-green-400'
                     )}
                   >
                     {formatNumber(row.result)}
                   </span>
                   {isHighlighted && !isHovered && (
-                    <span className="ml-2 text-indigo-400 text-xs">✦</span>
+                    <span className="ml-2 text-emerald-400 text-xs">✦</span>
                   )}
                 </div>
               </div>
@@ -185,20 +185,20 @@ export default function TablePage() {
         </div>
 
         {/* Footer summary */}
-        <div className="bg-gradient-to-r from-violet-900/40 to-indigo-900/40 border-t border-white/10 px-6 py-4 flex items-center justify-between">
-          <span className="text-slate-500 text-xs">
-            Showing <span className="text-slate-300 font-medium">{limit}</span> rows
+        <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 border-t border-green-900/40 px-6 py-4 flex items-center justify-between">
+          <span className="text-green-800 text-xs" style={{color:'#4ade8099'}}>
+            Showing <span className="text-green-300 font-medium">{limit}</span> rows
           </span>
           <div className="flex items-center gap-4 text-xs">
-            <span className="text-slate-500">
+            <span style={{color:'#4ade8099'}}>
               Sum:{' '}
               <span className="text-amber-400 font-bold font-mono-custom">
                 {formatNumber(rows.reduce((acc, r) => acc + r.result, 0))}
               </span>
             </span>
-            <span className="text-slate-500">
+            <span style={{color:'#4ade8099'}}>
               Max:{' '}
-              <span className="text-emerald-400 font-bold font-mono-custom">
+              <span className="text-green-400 font-bold font-mono-custom">
                 {formatNumber(rows[rows.length - 1]?.result ?? 0)}
               </span>
             </span>
@@ -207,7 +207,7 @@ export default function TablePage() {
       </div>
 
       {/* Footer note */}
-      <p className="mt-8 text-slate-600 text-xs text-center">
+      <p className="mt-8 text-green-900/50 text-xs text-center" style={{color:'#166534aa'}}>
         732 = 4 × 3 × 61 &nbsp;·&nbsp; Composite number &nbsp;·&nbsp; Even
       </p>
     </div>
