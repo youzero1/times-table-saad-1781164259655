@@ -7,5 +7,12 @@ export default defineConfig({
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },
-  server: { host: '0.0.0.0', port: 5173, hmr: false },
+  server: { host: '0.0.0.0', port: 5173 },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
 });
